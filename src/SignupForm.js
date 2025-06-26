@@ -9,7 +9,7 @@ function SignupForm({ onClose }) {
 const handleSignup = async (e) => {
   e.preventDefault();
   try {
-   await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/signup`, { username, password });
+    await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/signup`, { username, password });
 
     alert('Signup successful! You can now log in.');
     onClose();
