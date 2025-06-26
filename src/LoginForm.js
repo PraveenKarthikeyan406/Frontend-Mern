@@ -8,11 +8,8 @@ function LoginForm({ onClose, onLogin }) {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-       const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, {
-  username,
-  password,
-});
-
+    const res = await axios.post('http://localhost:3003/api/login', { username, password });
+    onLogin(res.data.username);
   } catch (err) {
     alert('Invalid username or password. Please signup.');
   }
