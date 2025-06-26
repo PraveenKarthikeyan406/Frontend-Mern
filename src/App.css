@@ -1,57 +1,248 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('./background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+
 .App {
-  font-size: calc(10px + 4vmin);
+  padding-top: 80px;
   text-align: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  
+  position:static;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar button {
+  margin-left: 10px;
+  padding: 10px 18px;
+  border: none;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,255,255,0.5);
+  transition: transform 0.2s ease;
+}
+.navbar button:hover {
+  transform: scale(1.05);
 }
 
-.App-header {
-  background-color: #173d8a;
-  min-height: 60vh;
+
+.home h2 {
+  font-size: 40px;
+  margin-top: 60px;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.form.glass {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.btn-glow {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  border: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 0 15px #38f9d7;
+}
+
+.btn-cancel {
+  background: #ff5e5e;
+  border: none;
+  color: white;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.session-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 220px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.session-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.timer {
+  margin-top: 40px;
+}
+
+.countdown {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.btn-pro {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  color: #333;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ffd200;
+}
+/* Column layout for session list */
+.column-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 220px;
+  gap: 20px;
+}
+
+/* Pause & Reset Button variations */
+.pause-btn {
+  background: linear-gradient(to right, #f2709c, #ff9472);
+  margin-left: 10px;
+}
+
+.reset-btn {
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  margin-left: 10px;
+}
+
+.footer {
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+  text-align: center;
+  padding: 1px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+
+}
+.slider-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  margin-left: 600px;
-  margin-right: 600px;
-  border-radius: 10px;
-  opacity: 0.9;
+  margin: 25px auto;
+  color: #eee;
+  font-weight: bold;
+  gap: 12px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.centerinput{
-  text-align: center; /* Center placeholder text */
-  padding: 4px;
-  width: 177px;
-  border-radius: 10px;
-}
-.button{
-  margin-top: 20px;
-  background-color: rgb(217, 255, 3);
-  color: #000000;
-  border: 2px solid #93dd14;
-  border-radius: 6px;
+.slider {
+  width: 60%;
+  max-width: 320px;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  outline: none;
+  transition: background 0.3s ease-in-out;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
   cursor: pointer;
 }
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 40%, #cce6ff 100%);
+  border: 2px solid #0072ff;
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 114, 255, 0.7);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1);
+  box-shadow: 0 0 12px rgba(0, 114, 255, 1);
+}
+
+.slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.4);
+  box-shadow: 0 0 16px rgba(0, 114, 255, 1);
+}
+
+/* For Firefox */
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 40%, #cce6ff 100%);
+  border: 2px solid #0072ff;
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 114, 255, 0.7);
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 12px rgba(0, 114, 255, 1);
+}
+
+.slider::-moz-range-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.4);
+  box-shadow: 0 0 16px rgba(0, 114, 255, 1);
+}
+
+
